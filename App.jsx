@@ -23,6 +23,9 @@ function App() {
     setPlaying({ ...playing, [id]: !playing[id] });
   };
 
+ import "./style.css";
+
+function App() {
   return (
     <div className="container">
       <img src="/media/bus.jpg" alt="Bus interior" className="bg" />
@@ -30,12 +33,17 @@ function App() {
         <h1>Kerala Private Bus</h1>
         <p>ഒരു ഓർമ്മയാത്ര...</p>
         <div className="buttons">
-          {sounds.map((s) => (
-            <button
-              key={s.id}
-              className={playing[s.id] ? "on" : ""}
-              onClick={() => toggle(s.id)}
-            >
+          <button><span>🚍</span> Bus</button>
+          <button><span>👥</span> Crowd</button>
+          <button><span>🌧️</span> Rain</button>
+          <button><span>🎵</span> Song</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default App;
               <span>{s.icon}</span>
               {s.label}
             </button>
